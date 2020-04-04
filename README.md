@@ -6,6 +6,8 @@
 去除英文字、數字、標點符號。
 
 文字探勘練習、N-gram演算法  
+optional: 移除次數(tf)小於特定大小的
+
 
 ### Agenda
 1. read word data (txt)
