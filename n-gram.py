@@ -23,7 +23,12 @@ print("start time: ", end="")
 localtime = time.asctime( time.localtime(time.time()) )
 print(localtime)
 
-#read data and print data shape
+#set the gram
+N_gram = 2
+print("N-gram = ",end = "")
+print(N_gram)
+
+#read data
 filename = "Text.txt"
 fp = open(filename,"r")
 Text = fp.read()
@@ -32,13 +37,6 @@ Text = clean_data(Text)
 
 #initail a dictionary
 _dict ={}
-
-#set the gram
-N_gram = 2
-
-print("N-gram = ",end = "")
-print(N_gram)
-
 
 for i in range(0,len(Text)-(N_gram - 1)):
 	#slice
@@ -52,11 +50,9 @@ for i in range(0,len(Text)-(N_gram - 1)):
 			_dict[gram] = 0
 		_dict[gram] +=1
 
-
 #(optional) To remove the frequency less than specific times 
 # specific_times = 50
 # _dict = {key:value for key, value in _dict.items() if value > specific_times}
-
 
 #sort the dictionary
 _dict = {key: value for key, value in sorted(_dict.items(), key=lambda item: item[1],reverse = True)}
